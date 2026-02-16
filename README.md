@@ -2,7 +2,7 @@
 
 **Write without trouble**
 
-Ink & Flow is a tactile, distraction-free writing environment that blends the tactile joy of writing with the boundless potential of modern AI. Designed for writers and thinkers who value focus and fluidity
+Ink & Flow is a tactile, distraction-free writing environment that blends the joy of writing with the boundless potential of modern AI. Designed for thinkers who value focus and fluidity
 
 ---
 
@@ -18,7 +18,7 @@ Ink & Flow is a tactile, distraction-free writing environment that blends the ta
 - **Distraction-Free Canvas**: a minimal, beautiful writing surface optimized for long-form thought
 - **Typewriter Mode**: keep your active line centered vertically, just like a classic typewriter
 - **Focus Mode**: fade away the UI and immerse yourself entirely in the page
-- **Universal Search (cmd+K)**: instantly find any document or content across your entire library
+- **Universal Search (cmd+k)**: instantly find any document or content across your entire library
 - **Internal Linking**: mention other documents using `@` to create a personal wiki of ideas
 
 ### Productivity
@@ -73,10 +73,10 @@ Ink & Flow is a tactile, distraction-free writing environment that blends the ta
 
 | Shortcut | Action |
 | :--- | :--- |
-| `⌘ + K` | Open Search Palette |
-| `⌘ + J` | Trigger Ghost Writer |
-| `⌘ + Shift + J` | AI "Continue From Here" |
-| `Tab` | Accept AI Suggestion |
+| `cmd + k` | Open Search Palette |
+| `cmd + j` | Trigger Ghost Writer |
+| `cmd + shift + j` | AI "Continue From Here" |
+| `tab` | Accept AI Suggestion |
 | `@` | Link another document |
 
 ---
