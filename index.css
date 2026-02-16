@@ -1,0 +1,244 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #DBCDBF;
+    border-radius: 4px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #A5A098;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+/* Tiptap Editor Styles */
+.ProseMirror {
+    outline: none;
+    min-height: 60vh;
+}
+
+.ProseMirror p.is-editor-empty:first-child::before {
+    color: #888C8D;
+    content: attr(data-placeholder);
+    float: left;
+    height: 0;
+    pointer-events: none;
+    font-style: italic;
+}
+
+/* Mention Styles */
+.mention {
+    background-color: rgba(152, 168, 162, 0.15);
+    /* sage/15 */
+    color: #39404E;
+    /* navy */
+    border-radius: 0.25rem;
+    padding: 0.1rem 0.3rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(152, 168, 162, 0.3);
+}
+
+.mention:hover {
+    background-color: rgba(152, 168, 162, 0.25);
+    border-bottom-color: #39404E;
+}
+
+/* Custom Selection Color */
+::selection {
+    background: #E8E1D9;
+    color: #2D2D2D;
+}
+
+/* Contrast Adjustment for Accessibility */
+.text-ink-faint {
+    color: #6B7072 !important;
+    /* Slightly darker for better contrast */
+}
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    ::before,
+    ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Skip Link for Accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #39404E;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.2s;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Smooth font rendering */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Dark Mode Styles */
+.dark body {
+    background: #121218;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #333340;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #555565;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+.dark .ProseMirror {
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.dark .ProseMirror h1,
+.dark .ProseMirror h2,
+.dark .ProseMirror h3 {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.dark .ProseMirror p.is-editor-empty:first-child::before {
+    color: rgba(255, 255, 255, 0.25);
+}
+
+.dark .ProseMirror blockquote {
+    border-left-color: rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.dark .ProseMirror code {
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.dark .ProseMirror pre {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dark .ProseMirror hr {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark .mention {
+    background-color: rgba(100, 140, 250, 0.15);
+    color: #8cb4ff;
+    border-bottom-color: rgba(100, 140, 250, 0.3);
+}
+
+.dark .mention:hover {
+    background-color: rgba(100, 140, 250, 0.25);
+    border-bottom-color: #8cb4ff;
+}
+
+.dark ::selection {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.dark .text-ink-faint {
+    color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Typewriter Mode: extra padding at bottom to allow centering */
+.typewriter-mode .ProseMirror {
+    padding-bottom: 50vh;
+}
+
+/* Print Styles */
+@media print {
+    @page {
+        margin: 2cm;
+    }
+
+    body {
+        background: white !important;
+        color: black !important;
+        overflow: visible !important;
+    }
+
+    /* Hide UI elements */
+    aside,
+    header,
+    .skip-link,
+    .chat-sidebar,
+    .bubble-menu,
+    button,
+    .ProseMirror-menubar,
+    .auth-modal,
+    .group\/paper>div:first-child,
+    .group\/paper>div:nth-child(2) {
+        display: none !important;
+    }
+
+    /* Target the main app container to remove flex/grid constraints if needed */
+    #root>div {
+        display: block !important;
+        height: auto !important;
+        overflow: visible !important;
+    }
+
+    /* Target Editor Wrapper */
+    main {
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+        overflow: visible !important;
+    }
+
+    /* Target The "Paper" */
+    .group\/paper {
+        box-shadow: none !important;
+        border: none !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+        min-height: auto !important;
+        background: white !important;
+    }
+
+    /* Target Content */
+    #editor-content {
+        padding: 0 !important;
+    }
+
+    .ProseMirror {
+        min-height: auto !important;
+    }
+}
